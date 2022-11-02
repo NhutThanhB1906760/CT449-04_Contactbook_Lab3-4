@@ -40,7 +40,8 @@ export default {
 
         async updateContact(data) {
             try {
-                await ContactService.update(this.contact._id, data); this.message = "Liên hệ được cập nhật thành công.";
+                await ContactService.update(this.contact._id, data); 
+                this.message = "Liên hệ được cập nhật thành công.";
             } catch (error) {
                 console.log(error);
             }
@@ -49,7 +50,8 @@ export default {
         async deleteContact() {
             if (confirm("Bạn muốn xóa Liên hệ này?")) {
                 try {
-                    await ContactService.delete(this.contact._id); this.$router.push({ name: "contactbook" });
+                    await ContactService.delete(this.contact._id);
+                    this.$router.push({ name: "contactbook" });
                 } catch (error) {
                     console.log(error);
                 }
